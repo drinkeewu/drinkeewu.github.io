@@ -1,7 +1,7 @@
 {
   "name": "drinkee-blog",
   "version": "1.0.0",
-  "author": "reco_luan",
+  "author": "drinkeewu",
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
@@ -10,5 +10,8 @@
     "vuepress": "1.2.0",
     "vuepress-theme-reco": "1.2.2"
   },
-  "description": "A blog"
+  "description": "A blog",
+  "dependencies": {
+    "core-js": "^3.6.4"
+  }
 }

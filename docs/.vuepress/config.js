@@ -1,6 +1,6 @@
 module.exports = {
   "title": "Drinkee's Blog",
-  "description": "Find something interesting.",
+  "description": "Record something interesting.",
   "dest": "public",
   "head": [
     [
@@ -34,7 +34,7 @@ module.exports = {
       {
         "text": "GitHub",
         "icon": "reco-github",
-        "link": "https://github.com/recoluan",
+        "link": "https://github.com/drinkeewu",
       }
     ],
     "type": "blog",
@@ -69,7 +69,6 @@ module.exports = {
     "lastUpdated": "Last Updated",
     "author": "drinkeewu",
     "authorAvatar": "/assets/img/avatar.png",
-    "record": "xxxx",
     "startYear": "2017"
   },
   "markdown": {
