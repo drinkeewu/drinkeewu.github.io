@@ -9,8 +9,14 @@ categories:
 ---
 
 ::: tip
-公司前段时间搭建了一个npm组件仓库, 在此总结一下经验。主要使用了`nrm`、`pm2`、`verdaccio`进行搭建。
+公司前段时间搭建了一个npm组件仓库, 在此总结一下经验。使用`nrm`、`pm2`、`verdaccio`进行搭建。
 :::
+
+<p align="center">
+  <img src="/assets/img/npm_logo.png" height="80px" style="margin-right: 50px"/>
+  <img src="/assets/img/verdaccio_logo.png" height="80px"/>
+</p>
+
 
 <!-- more -->
 
