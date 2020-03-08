@@ -9,7 +9,7 @@ categories:
 ---
 
 ::: tip
-公司前段时间搭建了一个npm组件仓库, 在此总结一下经验。使用`nrm`、`pm2`、`verdaccio`进行搭建。
+公司前段时间为了提高开发效率, 较少重复造轮子, 搭建了一个私有npm组件仓库, 在此总结一下经验。过程中使用了`nrm`、`pm2`、`verdaccio`进行搭建。
 :::
 
 <p align="center">
@@ -97,7 +97,7 @@ yum -y update openssl   #更新
 yum-config-manager --enable cr 
 yum update
 ```
-开放端口
+开放服务器的 `4000` 端口
 ```bash
 firewall-cmd --permanent --add-port=4000/tcp 
 ```
@@ -110,3 +110,66 @@ firewall-cmd --reload
 
 ![image](./img/NPM_Server_3.png)
 
+
+## 发布npm包到服务器
+
+### 切换到私有npm源
+首先，需要把npm源切换到刚刚添加的地址。为了切换起来更方便，这里我们借助`nrm` 。
+
+
+
+添加私有`npm`源到`nrm`管理器
+
+```bash
+npm add my-npm http://192.168.1.96:4000
+```
+- `my-npm`是npm源的别名, 可以根据自己的喜好命名
+- `http://192.168.1.96:4000`是私有npm的源地址
+
+使用私有`npm`源
+
+:::tip
+添加完私有npm源后, 可通过`nrm ls`命令查看已添加的和当前使用的`npm`源。
+:::
+
+![image](./img/NPM_Server_nrm_repo.png)
+
+### 添加用户
+为了把本地的组件库发布到私有`npm`服务器, 这里还需要添加一个登录`npm`服务器的账户。
+```bash
+npm adduser  #执行完该命令后, 按照提示分别输入用户命、密码和联系邮箱
+```
+
+### 发布npm包
+
+
+修改`package.json`文件里的`version`以修改版本号。或者通过`npm version`命令对版本号进行修改。
+
+:::tip
+在终端输入`npm version --help`命令可查看相关说明
+:::
+
+进入到组件库源代码的根目录, 登录私有`npm`服务器。
+```bash
+npm login 
+```
+
+发布:
+```bash
+npm publish
+```
+等待终端提示发布成功后, 打开浏览器访问服务器地址(此处例子为`http://192.168.1.96:4000`)即可看到新发布的`npm`包了✅
+
+
+:::warning
+执行发布命令前, 需要先通过`npm init`命令生成`package.json`文件。`package.json`上的`name`属性就是当前组件库在`npm`服务器上的包名。
+:::
+
+## 在实际开发中引入私有npm包
+私有`npm`发布成功后, 只需要像往常一样通过`npm install [package_name]`即可使用对应的`npm`包了。比如包名为`my-table`, 安装方式如下
+```bash
+npm install my-table
+```
+
+
+**End.**
