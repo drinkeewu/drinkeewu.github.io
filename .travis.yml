@@ -20,12 +20,12 @@ after_script:
   - git config user.email "773119690@qq.com"
   - git add .
   - git commit -m "auto deploy"
-  - git push --force --quiet "https://${blog_token}@${GH_REF}" master:gh-pages
+  - git push --force --quiet "https://${blog_token}@${GH_REF}" master
 
 
 branches:
   only:
-    - master # 触发集成分支
+    - release # 触发集成分支
 
 env:
   global:
