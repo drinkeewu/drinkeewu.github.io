@@ -37,7 +37,6 @@ categories:
 - Git History
 - Git History Diff
 - Git Project Manager
-
 - Prettier - Code formatter
 
 
@@ -45,7 +44,7 @@ categories:
 ## 代码补全、自动提示
 
 - **Path Autocomplete** 
-- **Path Intellisense **
+- **Path Intellisense**
 - Document This
 - Auto Close Tag
 - Auto Rename Tag
