@@ -65,7 +65,7 @@ vim .config/verdaccio/config.yml  #修改配置
 ```
 在配置文件中添加`listen:0.0.0.0:4000`的配置, 开放`verdaccio`服务器的端口(默认为`4873`)。如下图所示:
 
-![image](./img/NPM_Server_1.png)
+![image](./img/NPM_Server/NPM_Server_1.png)
 修改完成后, 退出并保存。
 
 
@@ -76,7 +76,7 @@ vim .config/verdaccio/config.yml  #修改配置
 pm2 start verdaccio
 ```
 pm2运行成功后, 终端会显示下图的提示
-![image](./img/NPM_Server_2.png)
+![image](./img/NPM_Server/NPM_Server_2.png)
 ::: tip
 也可以通过`pm2 ls`命令查看正在运行进程列表。
 :::
@@ -108,7 +108,7 @@ firewall-cmd --reload
 
 现在, 私有`npm`仓库服务器就已经搭建成功。浏览器访问服务器的地址(这里为`192.168.1.96:4000`), 就可以看到`verdaccio`服务器已经在运行。
 
-![image](./img/NPM_Server_3.png)
+![image](./img/NPM_Server/NPM_Server_3.png)
 
 
 ## 发布npm包到服务器
@@ -132,7 +132,7 @@ npm add my-npm http://192.168.1.96:4000
 添加完私有npm源后, 可通过`nrm ls`命令查看已添加的和当前使用的`npm`源。
 :::
 
-![image](./img/NPM_Server_nrm_repo.png)
+![image](./img/NPM_Server/NPM_Server_nrm_repo.png)
 
 ### 添加用户
 为了把本地的组件库发布到私有`npm`服务器, 这里还需要添加一个登录`npm`服务器的账户。
