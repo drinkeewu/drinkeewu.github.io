@@ -18,3 +18,7 @@
 [Blog's link](https://drinkeewu.github.io/)
 
 The Personal Blog to record Technology & Life. Build in [vuepress-theme-reco](https://github.com/vuepress-reco/vuepress-theme-reco)
+
+## Post List
+- [Vue keep-alive实践方案](https://drinkeewu.github.io/Notes/Vue_KeepAlive.html)
+- [使用Verdaccio搭建私有npm仓库](https://drinkeewu.github.io/Notes/NPM_Server.html)
