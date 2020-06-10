@@ -121,7 +121,7 @@ firewall-cmd --reload
 添加私有`npm`源到`nrm`管理器
 
 ```bash
-npm add my-npm http://192.168.1.96:4000
+nrm add my-npm http://192.168.1.96:4000
 ```
 - `my-npm`是npm源的别名, 可以根据自己的喜好命名
 - `http://192.168.1.96:4000`是私有npm的源地址
